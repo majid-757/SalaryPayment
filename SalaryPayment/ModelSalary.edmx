@@ -1,0 +1,1084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SalaryDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblDeduction">
+          <Key>
+            <PropertyRef Name="IdDeduction" />
+          </Key>
+          <Property Name="IdDeduction" Type="int" Nullable="false" />
+          <Property Name="NameDeduction" Type="nvarchar" MaxLength="50" />
+          <Property Name="BasePrice" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tel1" Type="nvarchar" MaxLength="15" />
+          <Property Name="Tel2" Type="nvarchar" MaxLength="15" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="15" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Pic" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tblJobs">
+          <Key>
+            <PropertyRef Name="JobsId" />
+          </Key>
+          <Property Name="JobsId" Type="int" Nullable="false" />
+          <Property Name="JobName" Type="nvarchar" MaxLength="50" />
+          <Property Name="BaseSalary" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblPerson">
+          <Key>
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="FName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Father" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeM" Type="nvarchar" MaxLength="12" />
+          <Property Name="ShSh" Type="nvarchar" MaxLength="12" />
+          <Property Name="BrDate" Type="nvarchar" MaxLength="12" />
+          <Property Name="Jensiyat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Taahol" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChildNum" Type="int" />
+          <Property Name="GroupId" Type="int" />
+          <Property Name="Sarbazi" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="20" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tahsilat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reshteh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="CodeP" Type="int" Nullable="false" />
+          <Property Name="JobsId" Type="int" />
+          <Property Name="Bemeh" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateReg" Type="nvarchar" MaxLength="12" />
+          <Property Name="TypeReg" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShHesab" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShCard" Type="nvarchar" MaxLength="20" />
+          <Property Name="Shaba" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bank" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pic" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tblPersonGroup">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" />
+          <Property Name="PersonGroup" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblSalary">
+          <Key>
+            <PropertyRef Name="SalaryId" />
+          </Key>
+          <Property Name="SalaryId" Type="int" Nullable="false" />
+          <Property Name="DateReg" Type="nvarchar" MaxLength="50" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeP" Type="int" />
+          <Property Name="OverTime" Type="int" />
+          <Property Name="OverTimePrice" Type="bigint" />
+          <Property Name="WorkDeduction" Type="int" />
+          <Property Name="WorkDeductionPrice" Type="bigint" />
+          <Property Name="Mission" Type="int" />
+          <Property Name="MissionPrice" Type="bigint" />
+          <Property Name="OverDay" Type="int" />
+          <Property Name="OverDayPrice" Type="bigint" />
+          <Property Name="DeductionDay" Type="int" />
+          <Property Name="DeductionDayPrice" Type="bigint" />
+          <Property Name="HelpPrice" Type="bigint" />
+          <Property Name="GestPrice" Type="bigint" />
+          <Property Name="DefDeductoinPrice" Type="bigint" />
+          <Property Name="DefSalaryPrice" Type="bigint" />
+          <Property Name="WorkDay" Type="int" />
+          <Property Name="WorkTime" Type="int" />
+          <Property Name="Bemeh" Type="bigint" />
+          <Property Name="TaxPrice" Type="bigint" />
+          <Property Name="SumSalary" Type="bigint" />
+          <Property Name="SumDeduction" Type="bigint" />
+          <Property Name="BaseSalary" Type="bigint" />
+          <Property Name="SalaryPrice" Type="bigint" />
+          <Property Name="Des" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblSalary_Deduction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SalaryId" Type="int" />
+          <Property Name="IdDeduction" Type="int" />
+          <Property Name="NameDeduction" Type="nvarchar" MaxLength="50" />
+          <Property Name="BasePrice" Type="bigint" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSalary_SalaryGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SalaryId" Type="int" />
+          <Property Name="IdSalaryGroup" Type="int" />
+          <Property Name="SalaryGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="BasePrice" Type="bigint" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSalaryGroup">
+          <Key>
+            <PropertyRef Name="IdSalaryGroup" />
+          </Key>
+          <Property Name="IdSalaryGroup" Type="int" Nullable="false" />
+          <Property Name="SalaryGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="BasePrice" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeM" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="Users" Type="int" />
+          <Property Name="BK" Type="int" />
+          <Property Name="RS" Type="int" />
+          <Property Name="Info" Type="int" />
+          <Property Name="PersonGroup" Type="int" />
+          <Property Name="Person" Type="int" />
+          <Property Name="Jobs" Type="int" />
+          <Property Name="SalaryGroup" Type="int" />
+          <Property Name="Deduction" Type="int" />
+          <Property Name="Salary" Type="int" />
+          <Property Name="Vam" Type="int" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblVam">
+          <Key>
+            <PropertyRef Name="IdVam" />
+          </Key>
+          <Property Name="IdVam" Type="int" Nullable="false" />
+          <Property Name="CodeP" Type="int" />
+          <Property Name="DateReg" Type="nvarchar" MaxLength="12" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="12" />
+          <Property Name="NumAgsat" Type="int" />
+          <Property Name="Price" Type="bigint" />
+          <Property Name="PriceAgsat" Type="bigint" />
+          <Property Name="Remainig" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SalaryDB.dbo.View_Person' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Person">
+          <Key>
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="FName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Father" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeM" Type="nvarchar" MaxLength="12" />
+          <Property Name="ShSh" Type="nvarchar" MaxLength="12" />
+          <Property Name="BrDate" Type="nvarchar" MaxLength="12" />
+          <Property Name="Jensiyat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Taahol" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChildNum" Type="int" />
+          <Property Name="GroupId" Type="int" />
+          <Property Name="PersonGroup" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sarbazi" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="20" />
+          <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+          <Property Name="Tahsilat" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reshteh" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="CodeP" Type="int" Nullable="false" />
+          <Property Name="JobsId" Type="int" />
+          <Property Name="JobName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bemeh" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateReg" Type="nvarchar" MaxLength="12" />
+          <Property Name="TypeReg" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShHesab" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShCard" Type="nvarchar" MaxLength="20" />
+          <Property Name="Shaba" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bank" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SalaryDB.dbo.View_Salary' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Salary">
+          <Key>
+            <PropertyRef Name="SalaryId" />
+          </Key>
+          <Property Name="SalaryId" Type="int" Nullable="false" />
+          <Property Name="DateReg" Type="nvarchar" MaxLength="50" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeP" Type="int" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChildNum" Type="int" />
+          <Property Name="JobsId" Type="int" />
+          <Property Name="JobName" Type="nvarchar" MaxLength="50" />
+          <Property Name="OverTime" Type="int" />
+          <Property Name="OverTimePrice" Type="bigint" />
+          <Property Name="WorkDeduction" Type="int" />
+          <Property Name="WorkDeductionPrice" Type="bigint" />
+          <Property Name="Mission" Type="int" />
+          <Property Name="MissionPrice" Type="bigint" />
+          <Property Name="OverDay" Type="int" />
+          <Property Name="OverDayPrice" Type="bigint" />
+          <Property Name="DeductionDay" Type="int" />
+          <Property Name="DeductionDayPrice" Type="bigint" />
+          <Property Name="HelpPrice" Type="bigint" />
+          <Property Name="GestPrice" Type="bigint" />
+          <Property Name="DefDeductoinPrice" Type="bigint" />
+          <Property Name="DefSalaryPrice" Type="bigint" />
+          <Property Name="WorkDay" Type="int" />
+          <Property Name="WorkTime" Type="int" />
+          <Property Name="Bemeh" Type="bigint" />
+          <Property Name="TaxPrice" Type="bigint" />
+          <Property Name="SumSalary" Type="bigint" />
+          <Property Name="SumDeduction" Type="bigint" />
+          <Property Name="BaseSalary" Type="bigint" />
+          <Property Name="SalaryPrice" Type="bigint" />
+          <Property Name="Des" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SalaryDB.dbo.View_User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_User">
+          <Key>
+            <PropertyRef Name="CodeM" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CodeM" Type="nvarchar" MaxLength="12" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SalaryDB.dbo.View_Vam' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Vam">
+          <Key>
+            <PropertyRef Name="IdVam" />
+          </Key>
+          <Property Name="IdVam" Type="int" Nullable="false" />
+          <Property Name="CodeP" Type="int" />
+          <Property Name="FName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LName" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateReg" Type="nvarchar" MaxLength="12" />
+          <Property Name="StartDate" Type="nvarchar" MaxLength="12" />
+          <Property Name="NumAgsat" Type="int" />
+          <Property Name="Price" Type="bigint" />
+          <Property Name="PriceAgsat" Type="bigint" />
+          <Property Name="Remainig" Type="bigint" />
+        </EntityType>
+        <Association Name="FK_tblPerson_tblJobs">
+          <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="0..1" />
+          <End Role="tblPerson" Type="Self.tblPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJobs">
+              <PropertyRef Name="JobsId" />
+            </Principal>
+            <Dependent Role="tblPerson">
+              <PropertyRef Name="JobsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPerson_tblPersonGroup">
+          <End Role="tblPersonGroup" Type="Self.tblPersonGroup" Multiplicity="0..1" />
+          <End Role="tblPerson" Type="Self.tblPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPersonGroup">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="tblPerson">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSalary_tblPerson">
+          <End Role="tblPerson" Type="Self.tblPerson" Multiplicity="0..1" />
+          <End Role="tblSalary" Type="Self.tblSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPerson">
+              <PropertyRef Name="CodeP" />
+            </Principal>
+            <Dependent Role="tblSalary">
+              <PropertyRef Name="CodeP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVam_tblPerson">
+          <End Role="tblPerson" Type="Self.tblPerson" Multiplicity="0..1" />
+          <End Role="tblVam" Type="Self.tblVam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPerson">
+              <PropertyRef Name="CodeP" />
+            </Principal>
+            <Dependent Role="tblVam">
+              <PropertyRef Name="CodeP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SalaryDBModelStoreContainer">
+          <EntitySet Name="tblDeduction" EntityType="Self.tblDeduction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInfo" EntityType="Self.tblInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblJobs" EntityType="Self.tblJobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPerson" EntityType="Self.tblPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPersonGroup" EntityType="Self.tblPersonGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalary" EntityType="Self.tblSalary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalary_Deduction" EntityType="Self.tblSalary_Deduction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalary_SalaryGroup" EntityType="Self.tblSalary_SalaryGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSalaryGroup" EntityType="Self.tblSalaryGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVam" EntityType="Self.tblVam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="View_Person" EntityType="Self.View_Person" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Person].[FName] AS [FName], 
+    [View_Person].[LName] AS [LName], 
+    [View_Person].[Father] AS [Father], 
+    [View_Person].[CodeM] AS [CodeM], 
+    [View_Person].[ShSh] AS [ShSh], 
+    [View_Person].[BrDate] AS [BrDate], 
+    [View_Person].[Jensiyat] AS [Jensiyat], 
+    [View_Person].[Taahol] AS [Taahol], 
+    [View_Person].[ChildNum] AS [ChildNum], 
+    [View_Person].[GroupId] AS [GroupId], 
+    [View_Person].[PersonGroup] AS [PersonGroup], 
+    [View_Person].[Sarbazi] AS [Sarbazi], 
+    [View_Person].[Tel] AS [Tel], 
+    [View_Person].[Mobile] AS [Mobile], 
+    [View_Person].[Tahsilat] AS [Tahsilat], 
+    [View_Person].[Reshteh] AS [Reshteh], 
+    [View_Person].[Address] AS [Address], 
+    [View_Person].[CodeP] AS [CodeP], 
+    [View_Person].[JobsId] AS [JobsId], 
+    [View_Person].[JobName] AS [JobName], 
+    [View_Person].[Bemeh] AS [Bemeh], 
+    [View_Person].[DateReg] AS [DateReg], 
+    [View_Person].[TypeReg] AS [TypeReg], 
+    [View_Person].[ShHesab] AS [ShHesab], 
+    [View_Person].[ShCard] AS [ShCard], 
+    [View_Person].[Shaba] AS [Shaba], 
+    [View_Person].[Bank] AS [Bank]
+    FROM [dbo].[View_Person] AS [View_Person]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Salary" EntityType="Self.View_Salary" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Salary].[SalaryId] AS [SalaryId], 
+    [View_Salary].[DateReg] AS [DateReg], 
+    [View_Salary].[Month] AS [Month], 
+    [View_Salary].[CodeP] AS [CodeP], 
+    [View_Salary].[FName] AS [FName], 
+    [View_Salary].[LName] AS [LName], 
+    [View_Salary].[ChildNum] AS [ChildNum], 
+    [View_Salary].[JobsId] AS [JobsId], 
+    [View_Salary].[JobName] AS [JobName], 
+    [View_Salary].[OverTime] AS [OverTime], 
+    [View_Salary].[OverTimePrice] AS [OverTimePrice], 
+    [View_Salary].[WorkDeduction] AS [WorkDeduction], 
+    [View_Salary].[WorkDeductionPrice] AS [WorkDeductionPrice], 
+    [View_Salary].[Mission] AS [Mission], 
+    [View_Salary].[MissionPrice] AS [MissionPrice], 
+    [View_Salary].[OverDay] AS [OverDay], 
+    [View_Salary].[OverDayPrice] AS [OverDayPrice], 
+    [View_Salary].[DeductionDay] AS [DeductionDay], 
+    [View_Salary].[DeductionDayPrice] AS [DeductionDayPrice], 
+    [View_Salary].[HelpPrice] AS [HelpPrice], 
+    [View_Salary].[GestPrice] AS [GestPrice], 
+    [View_Salary].[DefDeductoinPrice] AS [DefDeductoinPrice], 
+    [View_Salary].[DefSalaryPrice] AS [DefSalaryPrice], 
+    [View_Salary].[WorkDay] AS [WorkDay], 
+    [View_Salary].[WorkTime] AS [WorkTime], 
+    [View_Salary].[Bemeh] AS [Bemeh], 
+    [View_Salary].[TaxPrice] AS [TaxPrice], 
+    [View_Salary].[SumSalary] AS [SumSalary], 
+    [View_Salary].[SumDeduction] AS [SumDeduction], 
+    [View_Salary].[BaseSalary] AS [BaseSalary], 
+    [View_Salary].[SalaryPrice] AS [SalaryPrice], 
+    [View_Salary].[Des] AS [Des]
+    FROM [dbo].[View_Salary] AS [View_Salary]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_User" EntityType="Self.View_User" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_User].[UserName] AS [UserName], 
+    [View_User].[Password] AS [Password], 
+    [View_User].[Name] AS [Name], 
+    [View_User].[CodeM] AS [CodeM], 
+    [View_User].[id] AS [id]
+    FROM [dbo].[View_User] AS [View_User]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Vam" EntityType="Self.View_Vam" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Vam].[IdVam] AS [IdVam], 
+    [View_Vam].[CodeP] AS [CodeP], 
+    [View_Vam].[FName] AS [FName], 
+    [View_Vam].[LName] AS [LName], 
+    [View_Vam].[DateReg] AS [DateReg], 
+    [View_Vam].[StartDate] AS [StartDate], 
+    [View_Vam].[NumAgsat] AS [NumAgsat], 
+    [View_Vam].[Price] AS [Price], 
+    [View_Vam].[PriceAgsat] AS [PriceAgsat], 
+    [View_Vam].[Remainig] AS [Remainig]
+    FROM [dbo].[View_Vam] AS [View_Vam]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_tblPerson_tblJobs" Association="Self.FK_tblPerson_tblJobs">
+            <End Role="tblJobs" EntitySet="tblJobs" />
+            <End Role="tblPerson" EntitySet="tblPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPerson_tblPersonGroup" Association="Self.FK_tblPerson_tblPersonGroup">
+            <End Role="tblPersonGroup" EntitySet="tblPersonGroup" />
+            <End Role="tblPerson" EntitySet="tblPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSalary_tblPerson" Association="Self.FK_tblSalary_tblPerson">
+            <End Role="tblPerson" EntitySet="tblPerson" />
+            <End Role="tblSalary" EntitySet="tblSalary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVam_tblPerson" Association="Self.FK_tblVam_tblPerson">
+            <End Role="tblPerson" EntitySet="tblPerson" />
+            <End Role="tblVam" EntitySet="tblVam" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SalaryDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SalaryDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblDeduction" EntityType="SalaryDBModel.tblDeduction" />
+          <EntitySet Name="tblInfo" EntityType="SalaryDBModel.tblInfo" />
+          <EntitySet Name="tblJobs" EntityType="SalaryDBModel.tblJobs" />
+          <EntitySet Name="tblPerson" EntityType="SalaryDBModel.tblPerson" />
+          <EntitySet Name="tblPersonGroup" EntityType="SalaryDBModel.tblPersonGroup" />
+          <EntitySet Name="tblSalary" EntityType="SalaryDBModel.tblSalary" />
+          <EntitySet Name="tblSalary_Deduction" EntityType="SalaryDBModel.tblSalary_Deduction" />
+          <EntitySet Name="tblSalary_SalaryGroup" EntityType="SalaryDBModel.tblSalary_SalaryGroup" />
+          <EntitySet Name="tblSalaryGroup" EntityType="SalaryDBModel.tblSalaryGroup" />
+          <EntitySet Name="tblUser" EntityType="SalaryDBModel.tblUser" />
+          <EntitySet Name="tblVam" EntityType="SalaryDBModel.tblVam" />
+          <EntitySet Name="View_Person" EntityType="SalaryDBModel.View_Person" />
+          <EntitySet Name="View_Salary" EntityType="SalaryDBModel.View_Salary" />
+          <EntitySet Name="View_User" EntityType="SalaryDBModel.View_User" />
+          <EntitySet Name="View_Vam" EntityType="SalaryDBModel.View_Vam" />
+          <AssociationSet Name="FK_tblPerson_tblJobs" Association="SalaryDBModel.FK_tblPerson_tblJobs">
+            <End Role="tblJobs" EntitySet="tblJobs" />
+            <End Role="tblPerson" EntitySet="tblPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPerson_tblPersonGroup" Association="SalaryDBModel.FK_tblPerson_tblPersonGroup">
+            <End Role="tblPersonGroup" EntitySet="tblPersonGroup" />
+            <End Role="tblPerson" EntitySet="tblPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblSalary_tblPerson" Association="SalaryDBModel.FK_tblSalary_tblPerson">
+            <End Role="tblPerson" EntitySet="tblPerson" />
+            <End Role="tblSalary" EntitySet="tblSalary" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblVam_tblPerson" Association="SalaryDBModel.FK_tblVam_tblPerson">
+            <End Role="tblPerson" EntitySet="tblPerson" />
+            <End Role="tblVam" EntitySet="tblVam" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblDeduction">
+          <Key>
+            <PropertyRef Name="IdDeduction" />
+          </Key>
+          <Property Name="IdDeduction" Type="Int32" Nullable="false" />
+          <Property Name="NameDeduction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BasePrice" Type="Int64" />
+        </EntityType>
+        <EntityType Name="tblInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tel1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Tel2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tblJobs">
+          <Key>
+            <PropertyRef Name="JobsId" />
+          </Key>
+          <Property Name="JobsId" Type="Int32" Nullable="false" />
+          <Property Name="JobName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BaseSalary" Type="Int64" />
+          <NavigationProperty Name="tblPerson" Relationship="SalaryDBModel.FK_tblPerson_tblJobs" FromRole="tblJobs" ToRole="tblPerson" />
+        </EntityType>
+        <EntityType Name="tblPerson">
+          <Key>
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Father" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeM" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ShSh" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="BrDate" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Jensiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Taahol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChildNum" Type="Int32" />
+          <Property Name="GroupId" Type="Int32" />
+          <Property Name="Sarbazi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tahsilat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reshteh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeP" Type="Int32" Nullable="false" />
+          <Property Name="JobsId" Type="Int32" />
+          <Property Name="Bemeh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateReg" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="TypeReg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShHesab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShCard" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Shaba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="tblJobs" Relationship="SalaryDBModel.FK_tblPerson_tblJobs" FromRole="tblPerson" ToRole="tblJobs" />
+          <NavigationProperty Name="tblPersonGroup" Relationship="SalaryDBModel.FK_tblPerson_tblPersonGroup" FromRole="tblPerson" ToRole="tblPersonGroup" />
+          <NavigationProperty Name="tblSalary" Relationship="SalaryDBModel.FK_tblSalary_tblPerson" FromRole="tblPerson" ToRole="tblSalary" />
+          <NavigationProperty Name="tblVam" Relationship="SalaryDBModel.FK_tblVam_tblPerson" FromRole="tblPerson" ToRole="tblVam" />
+        </EntityType>
+        <EntityType Name="tblPersonGroup">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" />
+          <Property Name="PersonGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblPerson" Relationship="SalaryDBModel.FK_tblPerson_tblPersonGroup" FromRole="tblPersonGroup" ToRole="tblPerson" />
+        </EntityType>
+        <EntityType Name="tblSalary">
+          <Key>
+            <PropertyRef Name="SalaryId" />
+          </Key>
+          <Property Name="SalaryId" Type="Int32" Nullable="false" />
+          <Property Name="DateReg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeP" Type="Int32" />
+          <Property Name="OverTime" Type="Int32" />
+          <Property Name="OverTimePrice" Type="Int64" />
+          <Property Name="WorkDeduction" Type="Int32" />
+          <Property Name="WorkDeductionPrice" Type="Int64" />
+          <Property Name="Mission" Type="Int32" />
+          <Property Name="MissionPrice" Type="Int64" />
+          <Property Name="OverDay" Type="Int32" />
+          <Property Name="OverDayPrice" Type="Int64" />
+          <Property Name="DeductionDay" Type="Int32" />
+          <Property Name="DeductionDayPrice" Type="Int64" />
+          <Property Name="HelpPrice" Type="Int64" />
+          <Property Name="GestPrice" Type="Int64" />
+          <Property Name="DefDeductoinPrice" Type="Int64" />
+          <Property Name="DefSalaryPrice" Type="Int64" />
+          <Property Name="WorkDay" Type="Int32" />
+          <Property Name="WorkTime" Type="Int32" />
+          <Property Name="Bemeh" Type="Int64" />
+          <Property Name="TaxPrice" Type="Int64" />
+          <Property Name="SumSalary" Type="Int64" />
+          <Property Name="SumDeduction" Type="Int64" />
+          <Property Name="BaseSalary" Type="Int64" />
+          <Property Name="SalaryPrice" Type="Int64" />
+          <Property Name="Des" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblPerson" Relationship="SalaryDBModel.FK_tblSalary_tblPerson" FromRole="tblSalary" ToRole="tblPerson" />
+        </EntityType>
+        <EntityType Name="tblSalary_Deduction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SalaryId" Type="Int32" />
+          <Property Name="IdDeduction" Type="Int32" />
+          <Property Name="NameDeduction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BasePrice" Type="Int64" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tblSalary_SalaryGroup">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="SalaryId" Type="Int32" />
+          <Property Name="IdSalaryGroup" Type="Int32" />
+          <Property Name="SalaryGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BasePrice" Type="Int64" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tblSalaryGroup">
+          <Key>
+            <PropertyRef Name="IdSalaryGroup" />
+          </Key>
+          <Property Name="IdSalaryGroup" Type="Int32" Nullable="false" />
+          <Property Name="SalaryGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BasePrice" Type="Int64" />
+        </EntityType>
+        <EntityType Name="tblUser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeM" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Users" Type="Int32" />
+          <Property Name="BK" Type="Int32" />
+          <Property Name="RS" Type="Int32" />
+          <Property Name="Info" Type="Int32" />
+          <Property Name="PersonGroup" Type="Int32" />
+          <Property Name="Person" Type="Int32" />
+          <Property Name="Jobs" Type="Int32" />
+          <Property Name="SalaryGroup" Type="Int32" />
+          <Property Name="Deduction" Type="Int32" />
+          <Property Name="Salary" Type="Int32" />
+          <Property Name="Vam" Type="Int32" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="tblVam">
+          <Key>
+            <PropertyRef Name="IdVam" />
+          </Key>
+          <Property Name="IdVam" Type="Int32" Nullable="false" />
+          <Property Name="CodeP" Type="Int32" />
+          <Property Name="DateReg" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="NumAgsat" Type="Int32" />
+          <Property Name="Price" Type="Int64" />
+          <Property Name="PriceAgsat" Type="Int64" />
+          <Property Name="Remainig" Type="Int64" />
+          <NavigationProperty Name="tblPerson" Relationship="SalaryDBModel.FK_tblVam_tblPerson" FromRole="tblVam" ToRole="tblPerson" />
+        </EntityType>
+        <EntityType Name="View_Person">
+          <Key>
+            <PropertyRef Name="CodeP" />
+          </Key>
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Father" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeM" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="ShSh" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="BrDate" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Jensiyat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Taahol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChildNum" Type="Int32" />
+          <Property Name="GroupId" Type="Int32" />
+          <Property Name="PersonGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sarbazi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Tahsilat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reshteh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodeP" Type="Int32" Nullable="false" />
+          <Property Name="JobsId" Type="Int32" />
+          <Property Name="JobName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bemeh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateReg" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="TypeReg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShHesab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShCard" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Shaba" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_Salary">
+          <Key>
+            <PropertyRef Name="SalaryId" />
+          </Key>
+          <Property Name="SalaryId" Type="Int32" Nullable="false" />
+          <Property Name="DateReg" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeP" Type="Int32" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChildNum" Type="Int32" />
+          <Property Name="JobsId" Type="Int32" />
+          <Property Name="JobName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OverTime" Type="Int32" />
+          <Property Name="OverTimePrice" Type="Int64" />
+          <Property Name="WorkDeduction" Type="Int32" />
+          <Property Name="WorkDeductionPrice" Type="Int64" />
+          <Property Name="Mission" Type="Int32" />
+          <Property Name="MissionPrice" Type="Int64" />
+          <Property Name="OverDay" Type="Int32" />
+          <Property Name="OverDayPrice" Type="Int64" />
+          <Property Name="DeductionDay" Type="Int32" />
+          <Property Name="DeductionDayPrice" Type="Int64" />
+          <Property Name="HelpPrice" Type="Int64" />
+          <Property Name="GestPrice" Type="Int64" />
+          <Property Name="DefDeductoinPrice" Type="Int64" />
+          <Property Name="DefSalaryPrice" Type="Int64" />
+          <Property Name="WorkDay" Type="Int32" />
+          <Property Name="WorkTime" Type="Int32" />
+          <Property Name="Bemeh" Type="Int64" />
+          <Property Name="TaxPrice" Type="Int64" />
+          <Property Name="SumSalary" Type="Int64" />
+          <Property Name="SumDeduction" Type="Int64" />
+          <Property Name="BaseSalary" Type="Int64" />
+          <Property Name="SalaryPrice" Type="Int64" />
+          <Property Name="Des" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="View_User">
+          <Key>
+            <PropertyRef Name="CodeM" />
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodeM" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="View_Vam">
+          <Key>
+            <PropertyRef Name="IdVam" />
+          </Key>
+          <Property Name="IdVam" Type="Int32" Nullable="false" />
+          <Property Name="CodeP" Type="Int32" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateReg" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="NumAgsat" Type="Int32" />
+          <Property Name="Price" Type="Int64" />
+          <Property Name="PriceAgsat" Type="Int64" />
+          <Property Name="Remainig" Type="Int64" />
+        </EntityType>
+        <Association Name="FK_tblPerson_tblJobs">
+          <End Type="SalaryDBModel.tblJobs" Role="tblJobs" Multiplicity="0..1" />
+          <End Type="SalaryDBModel.tblPerson" Role="tblPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblJobs">
+              <PropertyRef Name="JobsId" />
+            </Principal>
+            <Dependent Role="tblPerson">
+              <PropertyRef Name="JobsId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPerson_tblPersonGroup">
+          <End Type="SalaryDBModel.tblPersonGroup" Role="tblPersonGroup" Multiplicity="0..1" />
+          <End Type="SalaryDBModel.tblPerson" Role="tblPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPersonGroup">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="tblPerson">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblSalary_tblPerson">
+          <End Type="SalaryDBModel.tblPerson" Role="tblPerson" Multiplicity="0..1" />
+          <End Type="SalaryDBModel.tblSalary" Role="tblSalary" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPerson">
+              <PropertyRef Name="CodeP" />
+            </Principal>
+            <Dependent Role="tblSalary">
+              <PropertyRef Name="CodeP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblVam_tblPerson">
+          <End Type="SalaryDBModel.tblPerson" Role="tblPerson" Multiplicity="0..1" />
+          <End Type="SalaryDBModel.tblVam" Role="tblVam" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPerson">
+              <PropertyRef Name="CodeP" />
+            </Principal>
+            <Dependent Role="tblVam">
+              <PropertyRef Name="CodeP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SalaryDBModelStoreContainer" CdmEntityContainer="SalaryDBEntities">
+          <EntitySetMapping Name="tblDeduction">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblDeduction">
+              <MappingFragment StoreEntitySet="tblDeduction">
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="NameDeduction" ColumnName="NameDeduction" />
+                <ScalarProperty Name="IdDeduction" ColumnName="IdDeduction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInfo">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblInfo">
+              <MappingFragment StoreEntitySet="tblInfo">
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblJobs">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblJobs">
+              <MappingFragment StoreEntitySet="tblJobs">
+                <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="JobsId" ColumnName="JobsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPerson">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblPerson">
+              <MappingFragment StoreEntitySet="tblPerson">
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Shaba" ColumnName="Shaba" />
+                <ScalarProperty Name="ShCard" ColumnName="ShCard" />
+                <ScalarProperty Name="ShHesab" ColumnName="ShHesab" />
+                <ScalarProperty Name="TypeReg" ColumnName="TypeReg" />
+                <ScalarProperty Name="DateReg" ColumnName="DateReg" />
+                <ScalarProperty Name="Bemeh" ColumnName="Bemeh" />
+                <ScalarProperty Name="JobsId" ColumnName="JobsId" />
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Reshteh" ColumnName="Reshteh" />
+                <ScalarProperty Name="Tahsilat" ColumnName="Tahsilat" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Sarbazi" ColumnName="Sarbazi" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="ChildNum" ColumnName="ChildNum" />
+                <ScalarProperty Name="Taahol" ColumnName="Taahol" />
+                <ScalarProperty Name="Jensiyat" ColumnName="Jensiyat" />
+                <ScalarProperty Name="BrDate" ColumnName="BrDate" />
+                <ScalarProperty Name="ShSh" ColumnName="ShSh" />
+                <ScalarProperty Name="CodeM" ColumnName="CodeM" />
+                <ScalarProperty Name="Father" ColumnName="Father" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPersonGroup">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblPersonGroup">
+              <MappingFragment StoreEntitySet="tblPersonGroup">
+                <ScalarProperty Name="PersonGroup" ColumnName="PersonGroup" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalary">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblSalary">
+              <MappingFragment StoreEntitySet="tblSalary">
+                <ScalarProperty Name="Des" ColumnName="Des" />
+                <ScalarProperty Name="SalaryPrice" ColumnName="SalaryPrice" />
+                <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+                <ScalarProperty Name="SumDeduction" ColumnName="SumDeduction" />
+                <ScalarProperty Name="SumSalary" ColumnName="SumSalary" />
+                <ScalarProperty Name="TaxPrice" ColumnName="TaxPrice" />
+                <ScalarProperty Name="Bemeh" ColumnName="Bemeh" />
+                <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+                <ScalarProperty Name="WorkDay" ColumnName="WorkDay" />
+                <ScalarProperty Name="DefSalaryPrice" ColumnName="DefSalaryPrice" />
+                <ScalarProperty Name="DefDeductoinPrice" ColumnName="DefDeductoinPrice" />
+                <ScalarProperty Name="GestPrice" ColumnName="GestPrice" />
+                <ScalarProperty Name="HelpPrice" ColumnName="HelpPrice" />
+                <ScalarProperty Name="DeductionDayPrice" ColumnName="DeductionDayPrice" />
+                <ScalarProperty Name="DeductionDay" ColumnName="DeductionDay" />
+                <ScalarProperty Name="OverDayPrice" ColumnName="OverDayPrice" />
+                <ScalarProperty Name="OverDay" ColumnName="OverDay" />
+                <ScalarProperty Name="MissionPrice" ColumnName="MissionPrice" />
+                <ScalarProperty Name="Mission" ColumnName="Mission" />
+                <ScalarProperty Name="WorkDeductionPrice" ColumnName="WorkDeductionPrice" />
+                <ScalarProperty Name="WorkDeduction" ColumnName="WorkDeduction" />
+                <ScalarProperty Name="OverTimePrice" ColumnName="OverTimePrice" />
+                <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="DateReg" ColumnName="DateReg" />
+                <ScalarProperty Name="SalaryId" ColumnName="SalaryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalary_Deduction">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblSalary_Deduction">
+              <MappingFragment StoreEntitySet="tblSalary_Deduction">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="NameDeduction" ColumnName="NameDeduction" />
+                <ScalarProperty Name="IdDeduction" ColumnName="IdDeduction" />
+                <ScalarProperty Name="SalaryId" ColumnName="SalaryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalary_SalaryGroup">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblSalary_SalaryGroup">
+              <MappingFragment StoreEntitySet="tblSalary_SalaryGroup">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="SalaryGroup" ColumnName="SalaryGroup" />
+                <ScalarProperty Name="IdSalaryGroup" ColumnName="IdSalaryGroup" />
+                <ScalarProperty Name="SalaryId" ColumnName="SalaryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSalaryGroup">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblSalaryGroup">
+              <MappingFragment StoreEntitySet="tblSalaryGroup">
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+                <ScalarProperty Name="SalaryGroup" ColumnName="SalaryGroup" />
+                <ScalarProperty Name="IdSalaryGroup" ColumnName="IdSalaryGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUser">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblUser">
+              <MappingFragment StoreEntitySet="tblUser">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Vam" ColumnName="Vam" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Deduction" ColumnName="Deduction" />
+                <ScalarProperty Name="SalaryGroup" ColumnName="SalaryGroup" />
+                <ScalarProperty Name="Jobs" ColumnName="Jobs" />
+                <ScalarProperty Name="Person" ColumnName="Person" />
+                <ScalarProperty Name="PersonGroup" ColumnName="PersonGroup" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="RS" ColumnName="RS" />
+                <ScalarProperty Name="BK" ColumnName="BK" />
+                <ScalarProperty Name="Users" ColumnName="Users" />
+                <ScalarProperty Name="CodeM" ColumnName="CodeM" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVam">
+            <EntityTypeMapping TypeName="SalaryDBModel.tblVam">
+              <MappingFragment StoreEntitySet="tblVam">
+                <ScalarProperty Name="Remainig" ColumnName="Remainig" />
+                <ScalarProperty Name="PriceAgsat" ColumnName="PriceAgsat" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="NumAgsat" ColumnName="NumAgsat" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="DateReg" ColumnName="DateReg" />
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="IdVam" ColumnName="IdVam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Person">
+            <EntityTypeMapping TypeName="SalaryDBModel.View_Person">
+              <MappingFragment StoreEntitySet="View_Person">
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Shaba" ColumnName="Shaba" />
+                <ScalarProperty Name="ShCard" ColumnName="ShCard" />
+                <ScalarProperty Name="ShHesab" ColumnName="ShHesab" />
+                <ScalarProperty Name="TypeReg" ColumnName="TypeReg" />
+                <ScalarProperty Name="DateReg" ColumnName="DateReg" />
+                <ScalarProperty Name="Bemeh" ColumnName="Bemeh" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="JobsId" ColumnName="JobsId" />
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Reshteh" ColumnName="Reshteh" />
+                <ScalarProperty Name="Tahsilat" ColumnName="Tahsilat" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Sarbazi" ColumnName="Sarbazi" />
+                <ScalarProperty Name="PersonGroup" ColumnName="PersonGroup" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="ChildNum" ColumnName="ChildNum" />
+                <ScalarProperty Name="Taahol" ColumnName="Taahol" />
+                <ScalarProperty Name="Jensiyat" ColumnName="Jensiyat" />
+                <ScalarProperty Name="BrDate" ColumnName="BrDate" />
+                <ScalarProperty Name="ShSh" ColumnName="ShSh" />
+                <ScalarProperty Name="CodeM" ColumnName="CodeM" />
+                <ScalarProperty Name="Father" ColumnName="Father" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Salary">
+            <EntityTypeMapping TypeName="SalaryDBModel.View_Salary">
+              <MappingFragment StoreEntitySet="View_Salary">
+                <ScalarProperty Name="Des" ColumnName="Des" />
+                <ScalarProperty Name="SalaryPrice" ColumnName="SalaryPrice" />
+                <ScalarProperty Name="BaseSalary" ColumnName="BaseSalary" />
+                <ScalarProperty Name="SumDeduction" ColumnName="SumDeduction" />
+                <ScalarProperty Name="SumSalary" ColumnName="SumSalary" />
+                <ScalarProperty Name="TaxPrice" ColumnName="TaxPrice" />
+                <ScalarProperty Name="Bemeh" ColumnName="Bemeh" />
+                <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+                <ScalarProperty Name="WorkDay" ColumnName="WorkDay" />
+                <ScalarProperty Name="DefSalaryPrice" ColumnName="DefSalaryPrice" />
+                <ScalarProperty Name="DefDeductoinPrice" ColumnName="DefDeductoinPrice" />
+                <ScalarProperty Name="GestPrice" ColumnName="GestPrice" />
+                <ScalarProperty Name="HelpPrice" ColumnName="HelpPrice" />
+                <ScalarProperty Name="DeductionDayPrice" ColumnName="DeductionDayPrice" />
+                <ScalarProperty Name="DeductionDay" ColumnName="DeductionDay" />
+                <ScalarProperty Name="OverDayPrice" ColumnName="OverDayPrice" />
+                <ScalarProperty Name="OverDay" ColumnName="OverDay" />
+                <ScalarProperty Name="MissionPrice" ColumnName="MissionPrice" />
+                <ScalarProperty Name="Mission" ColumnName="Mission" />
+                <ScalarProperty Name="WorkDeductionPrice" ColumnName="WorkDeductionPrice" />
+                <ScalarProperty Name="WorkDeduction" ColumnName="WorkDeduction" />
+                <ScalarProperty Name="OverTimePrice" ColumnName="OverTimePrice" />
+                <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="JobsId" ColumnName="JobsId" />
+                <ScalarProperty Name="ChildNum" ColumnName="ChildNum" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="DateReg" ColumnName="DateReg" />
+                <ScalarProperty Name="SalaryId" ColumnName="SalaryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_User">
+            <EntityTypeMapping TypeName="SalaryDBModel.View_User">
+              <MappingFragment StoreEntitySet="View_User">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CodeM" ColumnName="CodeM" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Vam">
+            <EntityTypeMapping TypeName="SalaryDBModel.View_Vam">
+              <MappingFragment StoreEntitySet="View_Vam">
+                <ScalarProperty Name="Remainig" ColumnName="Remainig" />
+                <ScalarProperty Name="PriceAgsat" ColumnName="PriceAgsat" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="NumAgsat" ColumnName="NumAgsat" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="DateReg" ColumnName="DateReg" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="CodeP" ColumnName="CodeP" />
+                <ScalarProperty Name="IdVam" ColumnName="IdVam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A34938A9-0B53-49F8-80C4-BAE0C1E07C74}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SalaryPayment</RootNamespace>
+    <AssemblyName>SalaryPayment</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Custom-Icon-Design-Pretty-Office-11-Coins.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.Instrumentation, Version=14.1.0.0, Culture=neutral, PublicKeyToken=f90dc37c26666a67" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Editor, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Report.Check.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Design, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Report.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2010.1.700.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Software\sti DLL\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessLevel.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeduction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeduction.Designer.cs">
+      <DependentUpon>frmDeduction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDeductionList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeductionList.Designer.cs">
+      <DependentUpon>frmDeductionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditPass.Designer.cs">
+      <DependentUpon>frmEditPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfo.Designer.cs">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJobs.Designer.cs">
+      <DependentUpon>frmJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmJobsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJobsList.Designer.cs">
+      <DependentUpon>frmJobsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmlogin.Designer.cs">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerson.Designer.cs">
+      <DependentUpon>frmPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonGroup.Designer.cs">
+      <DependentUpon>frmPersonGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonList.Designer.cs">
+      <DependentUpon>frmPersonList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalary.Designer.cs">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalaryGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalaryGroup.Designer.cs">
+      <DependentUpon>frmSalaryGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalaryGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalaryGroupList.Designer.cs">
+      <DependentUpon>frmSalaryGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalaryList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalaryList.Designer.cs">
+      <DependentUpon>frmSalaryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVam.Designer.cs">
+      <DependentUpon>frmVam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVamList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVamList.Designer.cs">
+      <DependentUpon>frmVamList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelSalary.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSalary.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelSalary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelSalary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSalary.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tblDeduction.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblInfo.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblJobs.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPerson.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPersonGroup.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSalary.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSalaryGroup.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSalary_Deduction.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblSalary_SalaryGroup.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblUser.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblVam.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Person.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Salary.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_User.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View_Vam.cs">
+      <DependentUpon>ModelSalary.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeduction.resx">
+      <DependentUpon>frmDeduction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeductionList.resx">
+      <DependentUpon>frmDeductionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditPass.resx">
+      <DependentUpon>frmEditPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfo.resx">
+      <DependentUpon>frmInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJobs.resx">
+      <DependentUpon>frmJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJobsList.resx">
+      <DependentUpon>frmJobsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmlogin.resx">
+      <DependentUpon>frmlogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerson.resx">
+      <DependentUpon>frmPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonGroup.resx">
+      <DependentUpon>frmPersonGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonList.resx">
+      <DependentUpon>frmPersonList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalary.resx">
+      <DependentUpon>frmSalary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalaryGroup.resx">
+      <DependentUpon>frmSalaryGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalaryGroupList.resx">
+      <DependentUpon>frmSalaryGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalaryList.resx">
+      <DependentUpon>frmSalaryList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVam.resx">
+      <DependentUpon>frmVam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVamList.resx">
+      <DependentUpon>frmVamList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="ModelSalary.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelSalary.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="ModelSalary.edmx.diagram">
+      <DependentUpon>ModelSalary.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Custom-Icon-Design-Pretty-Office-11-Coins.ico" />
+    <Content Include="ModelSalary.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelSalary.Context.cs</LastGenOutput>
+      <DependentUpon>ModelSalary.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelSalary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelSalary.edmx</DependentUpon>
+      <LastGenOutput>ModelSalary.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3d8a721a124c42a48b8d015a2d049ef4" Name="Diagram1">
+        <EntityTypeShape EntityType="SalaryDBModel.tblDeduction" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblInfo" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblJobs" Width="1.5" PointX="0.75" PointY="2.375" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblPerson" Width="1.5" PointX="3" PointY="2.875" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblPersonGroup" Width="1.5" PointX="0.75" PointY="5.5" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblSalary" Width="1.5" PointX="5.25" PointY="4.875" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblSalary_Deduction" Width="1.5" PointX="7.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblSalary_SalaryGroup" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblSalaryGroup" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblUser" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.tblVam" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="SalaryDBModel.View_Person" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.View_Salary" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.View_User" Width="1.5" PointX="7.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SalaryDBModel.View_Vam" Width="1.5" PointX="11.75" PointY="8.75" />
+        <AssociationConnector Association="SalaryDBModel.FK_tblPerson_tblJobs" />
+        <AssociationConnector Association="SalaryDBModel.FK_tblPerson_tblPersonGroup" />
+        <AssociationConnector Association="SalaryDBModel.FK_tblSalary_tblPerson" />
+        <AssociationConnector Association="SalaryDBModel.FK_tblVam_tblPerson" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
