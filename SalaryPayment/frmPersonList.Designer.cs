@@ -115,7 +115,7 @@ namespace SalaryPayment
             this.txtCodeP.Dock = System.Windows.Forms.DockStyle.Right;
             this.txtCodeP.FocusHighlightEnabled = true;
             this.txtCodeP.ForeColor = System.Drawing.Color.Black;
-            this.txtCodeP.Location = new System.Drawing.Point(227, 0);
+            this.txtCodeP.Location = new System.Drawing.Point(231, 0);
             this.txtCodeP.Name = "txtCodeP";
             this.txtCodeP.PreventEnterBeep = true;
             this.txtCodeP.Size = new System.Drawing.Size(99, 23);
@@ -126,9 +126,9 @@ namespace SalaryPayment
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Location = new System.Drawing.Point(326, 0);
+            this.label4.Location = new System.Drawing.Point(330, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 16);
+            this.label4.Size = new System.Drawing.Size(69, 16);
             this.label4.TabIndex = 39;
             this.label4.Text = "کد پرسنلی";
             // 
@@ -144,7 +144,7 @@ namespace SalaryPayment
             this.txtLName.Dock = System.Windows.Forms.DockStyle.Right;
             this.txtLName.FocusHighlightEnabled = true;
             this.txtLName.ForeColor = System.Drawing.Color.Black;
-            this.txtLName.Location = new System.Drawing.Point(396, 0);
+            this.txtLName.Location = new System.Drawing.Point(399, 0);
             this.txtLName.Name = "txtLName";
             this.txtLName.PreventEnterBeep = true;
             this.txtLName.Size = new System.Drawing.Size(149, 23);
@@ -155,9 +155,9 @@ namespace SalaryPayment
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label9.Location = new System.Drawing.Point(545, 0);
+            this.label9.Location = new System.Drawing.Point(548, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 16);
+            this.label9.Size = new System.Drawing.Size(78, 16);
             this.label9.TabIndex = 37;
             this.label9.Text = "نام خانوداگی";
             // 
@@ -173,7 +173,7 @@ namespace SalaryPayment
             this.txtFName.Dock = System.Windows.Forms.DockStyle.Right;
             this.txtFName.FocusHighlightEnabled = true;
             this.txtFName.ForeColor = System.Drawing.Color.Black;
-            this.txtFName.Location = new System.Drawing.Point(624, 0);
+            this.txtFName.Location = new System.Drawing.Point(626, 0);
             this.txtFName.Name = "txtFName";
             this.txtFName.PreventEnterBeep = true;
             this.txtFName.Size = new System.Drawing.Size(149, 23);
@@ -184,9 +184,9 @@ namespace SalaryPayment
             // 
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label10.Location = new System.Drawing.Point(773, 0);
+            this.label10.Location = new System.Drawing.Point(775, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 16);
+            this.label10.Size = new System.Drawing.Size(23, 16);
             this.label10.TabIndex = 35;
             this.label10.Text = "نام";
             // 
@@ -202,7 +202,7 @@ namespace SalaryPayment
             this.txtName.Dock = System.Windows.Forms.DockStyle.Right;
             this.txtName.FocusHighlightEnabled = true;
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(797, 0);
+            this.txtName.Location = new System.Drawing.Point(798, 0);
             this.txtName.Name = "txtName";
             this.txtName.PreventEnterBeep = true;
             this.txtName.Size = new System.Drawing.Size(134, 23);
@@ -213,9 +213,9 @@ namespace SalaryPayment
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Location = new System.Drawing.Point(931, 0);
+            this.label2.Location = new System.Drawing.Point(932, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(40, 16);
             this.label2.TabIndex = 20;
             this.label2.Text = "سمت";
             // 
@@ -269,7 +269,7 @@ namespace SalaryPayment
             this.lblFlg.AutoSize = true;
             this.lblFlg.Location = new System.Drawing.Point(479, 10);
             this.lblFlg.Name = "lblFlg";
-            this.lblFlg.Size = new System.Drawing.Size(15, 16);
+            this.lblFlg.Size = new System.Drawing.Size(14, 16);
             this.lblFlg.TabIndex = 28;
             this.lblFlg.Text = "0";
             this.lblFlg.Visible = false;
@@ -396,7 +396,7 @@ namespace SalaryPayment
             this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewX1.EnableHeadersVisualStyles = false;
-            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewX1.Name = "dataGridViewX1";
             this.dataGridViewX1.ReadOnly = true;

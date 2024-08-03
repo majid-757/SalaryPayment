@@ -29,7 +29,7 @@ namespace SalaryPayment
         void Header()
         {
             dataGridViewX1.Columns[0].HeaderText = "نام";
-            dataGridViewX1.Columns[1].HeaderText = "نام خانوداگی";
+            dataGridViewX1.Columns[1].HeaderText = "نام خانوادگی";
             dataGridViewX1.Columns[1].Width = 150;
             dataGridViewX1.Columns[2].HeaderText = "نام پدر";
             dataGridViewX1.Columns[3].HeaderText = "کد ملی";
